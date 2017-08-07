@@ -1,0 +1,72 @@
+  html, body, div, button{
+    margin: 0;
+    padding: 0;
+  }
+
+
+  div, button {
+    list-style: none;
+  }
+
+  body{
+    padding: 50px;
+  }
+
+  .main-list >button {
+    border: 2px solid #999;
+    float: left;
+    width: 60px;
+    height: 360px;
+    background: linear-gradient(180deg, #eee, #eee, 70%, #bfbfbf);
+  }
+
+  .main-list > button:active,
+  .main-list > button.active {
+    box-shadow: inset 0 0 10px #5f5d61;
+    border: 2px solid #999;
+    height:358px;
+  }
+
+
+  
+
+
+  .main-list > button:not(:first-child){
+      border-left: none;
+  }
+
+  .main-list div {
+    position: absolute;
+    padding: 0 45px;
+  }
+  .main-list div button{
+    float: left;
+    margin-right: 26px;
+    width:36px;
+    height:200px;
+    background: linear-gradient(180deg, #535353, #535353 30%, #030303);
+  }
+
+
+
+ .main-list div button:active,
+ .main-list dive button.active{
+    height: 196px;
+ }
+ .main-list div button:nth-child(1),
+ .main-list div button:nth-child(4),
+ .main-list div button:nth-child(6),
+ .main-list div button:nth-child(8),
+ .main-list div button:nth-child(11),
+ .main-list div button:nth-child(13),
+  .main-list div button:nth-child(14),
+ .main-list div button:nth-child(17){
+     visibility: hidden;
+ }
+
+
+  
+
+
+ 
+

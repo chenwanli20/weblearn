@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="/static/css">
+<link rel="stylesheet" href="/static/private.css">
+<title>钢琴演奏</title>
+
+</head>
+<body>
+<div class= "main-list">
+
+<button   onclick="audio_Play('1')"> </button>
+<button   onclick="audio_Play('2')"></button>
+<button  onclick="audio_Play('3')"></button>
+<button  onclick="audio_Play('4')"></button>
+<button  onclick="audio_Play('5')"></button>
+<button  onclick="audio_Play('6')"></button>
+<button   onclick="audio_Play('7')"></button>
+<button   onclick="audio_Play('8')"></button>
+<button  onclick="audio_Play('9')"></button>
+<button   onclick="audio_Play('10')"> </button>
+<button   onclick="audio_Play('11')"></button>
+<button   onclick="audio_Play('12')"></button>
+<button   onclick="audio_Play('13')"></button>
+<button   onclick="audio_Play('14')"></button>
+<button  onclick="audio_Play('15')"></button>
+<button  onclick="audio_Play('16')"></button>
+<button   onclick="audio_Play('17')"></button>
+<button   onclick="audio_Play('18')"></button>
+    <div >
+        <button   onclick="audio_Play('1')"> </button>
+        <button   onclick="audio_Play('2')"></button>
+        <button  onclick="audio_Play('3')"></button>
+        <button   onclick="audio_Play('4')"></button>
+        <button  onclick="audio_Play('5')"></button>
+        <button   onclick="audio_Play('6')"></button>
+        <button  onclick="audio_Play('7')"></button>
+        <button  onclick="audio_Play('8')"></button>        
+        <button onclick="audio_Play('9')"></button>
+         <button   onclick="audio_Play('10')"> </button>
+         <button   onclick="audio_Play('11')"></button>
+        <button onclick="audio_Play('12')"></button>
+        <button   onclick="audio_Play('13')"></button>
+        <button  onclick="audio_Play('14')"></button>
+        <button onclick="audio_Play('15')"></button>
+        <button onclick="audio_Play('16')"></button>
+        <button   onclick="audio_Play('17')"></button> 
+    </div>
+
+</div>
+</body>
+
+
+<script>
+var currentButton;
+
+  function audio_Play(stemp){  
+
+      var audio = document.createElement("audio");  
+      var s="./sounds/"+stemp+".mp3";
+      audio.src=s;
+      audio.load();
+      audio.play(); 
+    //   document.querySelectorAll('button')[stemp-1].className = 'active';
+    //   audio.ended  = function(){
+    //     document.querySelectorAll('button')[stemp-1].className = '';
+    //   }
+    //   audio.addEventListener("ended", function(){
+    //       document.querySelectorAll('button')[stemp-1].className = '';
+    //   });
+
+      currentButton = stemp;
+        
+ }
+document.onmouseup = function(){
+    document.querySelectorAll('button')[currentButton-1].className = ''
+}
+
+ document.onkeyup = function(){
+     document.querySelectorAll('button')[currentButton-1].className = ''
+ }
+
+    document.onkeydown=function(event){
+             var e = event || window.event || arguments.callee.caller.arguments[0];
+
+             var m = new Map([[65,'1'], [83, '2'], [68, '3'], [70, '4'], 
+                  [71, '5'], [72, '6'], [74, '7'], [75, '8'], [76, '9'],
+                  [81, '10'], [87, '11'], [69, '12'], [82, '13'], [84, '14'],
+                  [89, '15'], [85, '16'], [73, '17'], [79, '18'], [80, '19']
+                 
+            ]);
+
+             m.forEach(function(value, key,map){
+                 if(key == (e && e.keyCode)){
+                 var key_tulist = document.getElementsByTagName("div");
+                 var  indexNum=parseInt(value)-1;
+                 var key_button=key_tulist[0].getElementsByTagName("button");  
+                 key_button[indexNum].click(); 
+                 //key_button[indexNum].;  
+                 //audio_Play(value);
+                          
+                 }
+             });
+            
+         };
+
+
+
+/*
+
+var key_tulist = document.getElementsByTagName("div");
+var  indexNum=parseInt(value)-1;
+var key_button=key_tulist[0].getElementsByTagName("button");
+key_button[indexNum].style.height='358px'; 
+
+
+*/ 
+
+</script>
+</html>
