@@ -1,0 +1,67 @@
+.box{
+   
+    display:flex;
+    flex-direction: row;                /*决定主轴的方向*/
+    flex-wrap: nowrap;                   /*决定排列换行不换行    flex-flow属性是flex-direction属性和flex-wrap属性的简写形式*/
+  
+    justify-content: center;             /*justify-content 属性定义了项目在主轴上的对齐方式*/
+}
+
+.box-item1{
+    display: flex;
+    flex: 0 1 20%;
+    height: 100vh;
+    align-items: flex-start;            /*align-items:定义交叉轴如何对齐*/
+    order: 0;
+}
+
+.box-item2{
+    height: 100vh;
+     display: flex;
+    flex: 0 1 80%;
+    flex-direction: column;
+    order: 1;
+   
+}
+
+
+.box-item2-header{
+    display: flex;
+    flex: 0 1 15%;
+    flex-direction: column;
+    background-color:yellow
+}
+.box-item2-content{
+    display: flex;
+    flex: 0 1 85%;
+    flex-direction: column;
+    background-color: purple;
+}
+
+
+
+ul, li{
+    display: flex;
+    list-style:none; 
+    flex-direction: column;
+  
+}
+ul li a{
+    display:flex;
+   
+   background-color: green;
+    /*border: 30px solid purple;*/
+    text-decoration: none;
+}
+
+/*order: 定义项目的排列顺序，数值越小，排列越靠前 默认为0*/
+
+/*flex-grow: 定义项目的放大比例， 默认为0， 即如果存在剩余空间， 也不放大。*/
+
+/*flex-shrink: 定义了项目的缩小比例， 默认为1， 即如果空间不足， 该项目将缩小*/
+
+/*flex-basis： 定义了再分配多余空间之前， 项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间 */
+
+/*align-self: 允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性， 默认继承父元素align-items属性*/
+
+
